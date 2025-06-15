@@ -1,4 +1,4 @@
-# K8s Fullstack App with Helm + ArgoCD + GitHub Actions
+# K8s Fullstack App with Helm + ArgoCD + GitHub Actions1
 
 ## Overview
 This repo contains a frontend and backend written in Python (Flask), containerized with Docker, deployed via Helm on Kubernetes, and managed using ArgoCD with GitHub Actions for CI/CD.
