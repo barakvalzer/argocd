@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/your-org/your-repo'
+    repoURL: 'https://github.com/barakvalzer/argocd'
     targetRevision: HEAD
     path: charts/fullstack
     helm:
