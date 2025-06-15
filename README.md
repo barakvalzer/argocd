@@ -56,4 +56,4 @@ On every push to `main` branch:
 - Add pod listing API via Flask and Kubernetes client
 
 ---
-Replace placeholder values like DockerHub username and GitHub repo URLs with your actual settings before deployment..
+Replace placeholder values like DockerHub username and GitHub repo URLs with your actual settings before deployment.
