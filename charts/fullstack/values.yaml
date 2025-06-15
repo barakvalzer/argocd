@@ -1,0 +1,8 @@
+backend:
+  image: barakvalzer/backend:latest
+  port: 5000
+
+frontend:
+  image: barakvalzer/frontend:latest
+  port: 5000
+  backendUrl: http://backend:5000
