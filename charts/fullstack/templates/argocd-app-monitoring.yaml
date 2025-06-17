@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: monitoring-stack
+  name: grafana-only
   namespace: argocd
 spec:
   project: default
@@ -13,7 +13,12 @@ spec:
       values: |
         prometheusOperator:
           enabled: false
-
+        alertmanager:
+          enabled: false
+        prometheus:
+          enabled: false
+        defaultRules:
+          create: false
         kubeControllerManager:
           enabled: false
         kubeScheduler:
@@ -24,12 +29,10 @@ spec:
           enabled: false
         kubeApiServer:
           enabled: false
-
-        prometheus:
-          enabled: true
-          service:
-            type: NodePort
-            nodePort: 32001
+        kubeStateMetrics:
+          enabled: false
+        nodeExporter:
+          enabled: false
 
         grafana:
           enabled: true
@@ -37,9 +40,6 @@ spec:
           service:
             type: NodePort
             nodePort: 32000
-
-        alertmanager:
-          enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
