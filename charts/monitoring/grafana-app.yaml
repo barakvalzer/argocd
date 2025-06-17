@@ -10,8 +10,15 @@ spec:
     repoURL: https://grafana.github.io/helm-charts
     targetRevision: 7.3.7
     helm:
-      valueFiles:
-        - grafana-values.yaml
+      values: |
+        adminUser: admin
+        adminPassword: admin
+        service:
+          type: ClusterIP
+          port: 3000
+        persistence:
+          enabled: false
+  
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
